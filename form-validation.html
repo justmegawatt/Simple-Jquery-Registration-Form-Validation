@@ -60,20 +60,21 @@
             <form id='validationForm'>
                     <h2 id='title'>Registration Form</h2>
                     <label for='email'>Email: </label>
-                    <input name='email' id='email' />
-                    <label class='error' for='email'></label>
+                    <input id='email' name='email' />
+                    <label id='emailError' class='error' for='email'></label>
 
                     <label for='telephone'>Telehone: </label>
-                    <input name='telephone' />
-                    <label class='error' for='email'></label>
+                    <input id='telephone' name='telephone' />
+                    <label id='telephoneError' class='error' for='telephone'></label>
 
                     <label for='password'>Password: </label>
-                    <input name='password' type='password' />
-                    <label class='error' for='email'></label>
+                    <input id='password' name='password' type='password' />
+                    <label id='passwordError' class='error' for='password'></label>
 
                     <label for='confirm'>Confirm Password: </label>
-                    <input name='confirm' type='password' />
-                    <label class='error' for='email'></label>
+                    <input id='confirm' name='confirm' type='password' />
+                    <label id='confirmError' class='error' for='confirm'></label>
+
                     <input id='submitButton' type='submit' value='Submit' />
             </form>
         </div>
@@ -87,10 +88,9 @@
 
             $('#validationForm').submit(function(event) {
                 event.preventDefault();
-                alert('submitted');
 
                 if (!isValidEmailAddress($('#email').val())) {
-                    alert('Wrong Email');
+                    $('#emailError').html('Wrong Email');
                 }
 
             });
